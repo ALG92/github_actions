@@ -1,14 +1,9 @@
-q
-cat > .github/workflows/my_first_workflow.yml <<'YAML'
 name: Shell commands
-on: [push]
-
+on:
+  push:
 jobs:
-  run-shell-command:
-    runs-on: ${{ matrix.os }}
-    strategy:
-      matrix:
-        os: [ubuntu-latest, ubuntu-20.04]
+  run:
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
